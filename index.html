@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Huddle landing page with curved sections</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body{
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+    }
+
+    header img{
+      width: 200px;
+    }
+
+    header button{
+      background-color: white;
+      color: hsl(322, 100%, 66%);
+      padding:  1em 2em;
+      border-color: hsl(322, 100%, 66%);
+      border-radius : 25px;
+    }
+
+    main{
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+    }
+
+    .intro{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .intro img{
+      padding: 2rem;
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
+
+    .intro h2{
+      text-align: center;
+      font-size: 60px;
+      color: hsl(237, 17%, 21%);
+    }
+
+    .intro p{
+      font-size: 1.25rem;
+      width: 45%;
+      color: hsl(240, 6%, 50%);
+      text-align: center;
+    }
+
+    .intro button{
+      background-color: hsl(322, 100%, 66%);
+      color: white;
+      padding: 1em 2em;
+      border: none;
+      border-radius: 30px;
+      width: 300px;
+      height: 60px;
+      font-weight: bold;
+    }
+
+    .stats {
+      display: flex;
+      justify-content:space-evenly;
+      text-align:left;
+      width: 100%;
+    }
+
+    .number{
+      font-size: 90px;
+      font-weight: bold;
+      padding: 0;
+      margin: 0;
+      color: hsl(237, 17%, 21%);
+    }
+
+    .icon{
+      width: 50px;
+    }
+
+    .mes{
+      font-size: 1.25rem;
+      color: hsl(240, 6%, 50%);
+      justify-self:center;
+    }
+
+    .features1{
+      background-color: hsl(207, 100%, 98%);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row-reverse;
+      width: 100%;
+
+    }
+
+    .features1 img{
+      width: 30%;
+
+    }
+
+    .bg-section-top, .bg-section-bottom{
+      width: 100%;
+    }
+
+    .features1-text{
+      width: 30%;
+    }
+
+    .features1-text h2{
+      font-size: 40px;
+      color: hsl(237, 17%, 21%);
+    }
+
+    .features1-text p{
+      font-size: 1.25rem;
+      color: hsl(240, 6%, 50%);
+    }
+
+    .features2{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row;
+      width: 100%;
+
+      margin: 10%;
+    }
+
+    .features2 img{
+      width: 40%;
+      padding-left: 5%;
+    }
+
+    .features2-text{
+      width: 30%;
+    }
+
+    .features2-text h2{
+      font-size: 40px;
+      color: hsl(237, 17%, 21%);
+    }
+
+    .features2-text p{
+      font-size: 1.25rem;
+      color: hsl(240, 6%, 50%);
+    }
+
+    .users{
+      background-color: hsl(207, 100%, 98%);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row-reverse;
+      width: 100%;
+
+    }
+
+    .users img{
+      width: 40%;
+    }
+
+    .users-text{
+      width: 30%;
+    }
+
+    .users-text h2{
+      font-size: 40px;
+      color: hsl(237, 17%, 21%);
+    }
+
+    .users-text p{
+      font-size: 1.25rem;
+      color: hsl(240, 6%, 50%);
+    }
+
+    .cta{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      margin-top: 10%;
+      margin-bottom: 10%;
+    }
+
+    .cta h2{
+      font-size: 40px;
+      color: hsl(237, 17%, 21%);
+    }
+
+    .cta button{
+      background-color: hsl(322, 100%, 66%);
+      color: white;
+      padding: 1em 2em;
+      border: none;
+      border-radius: 25px;
+      width: 300px;
+      height: 50px;
+      font-weight: bold;
+    }
+
+    .bg-footer-top{
+      width: 100%;
+    }
+
+    footer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .column{
+      background-color: hsl(192, 100%, 9%);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+    }
+
+    .left-column{
+      width: 50%;
+      padding: 2rem;
+    }
+
+    .logo{
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      border-radius: 50%;
+    }
+
+    .footer-text{
+      color: white;
+      font-size: 1.25rem;
+    }
+
+    .contact{
+      color: white;
+      font-size: 1.25rem;
+    }
+
+    .right-column{
+      width: 50%;
+      padding: 2rem;
+    }
+
+    .right-column h3{
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .right-column p{
+      color: white;
+      font-size: 1.25rem;
+    }
+
+    input{
+      width: 80%;
+      height: 40px;
+      border-radius: 25px;
+      border: none;
+      margin: 1rem;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="./images/logo.svg" alt="Huddle logo">
+    <button> Try it free</button>
+  </header>
+  <main>
+    <section class="intro">
+      <h2>Build The community Your Fans Will Love</h2>
+      <p>Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion.</p>
+      <button>Get Started For Free</button>
+      <img src="./images/screen-mockups.svg" alt="Screen mockups">
+    </section>
+    <section class="stats">
+      <div id="com">
+        <img src="./images/icon-communities.svg" alt="" class="icon">
+        <p class="number">1.4k+</p>
+        <p class="mes">Communities Formed</p>
+      </div>
+      <div id="mes">
+        <img src="./images/icon-messages.svg" alt="" class="icon">
+        <p class="number">2.7m+</p>
+        <p class="mes">Messages Sent</p>
+      </div>
+    </section>
+    <img src="./images/bg-section-top-desktop-1.svg" alt="" class="bg-section-top">
+    <section class="features1">
+        <img src="./images/illustration-grow-together.svg" alt="">
+        <div class="features1-text"> 
+          <h2>Grow Together</h2>
+          <p>Generate meaningful discussions with your audience and build a strong, loyal community. Think of the insightful conversations you miss out on with a feedback form.</p>
+        </div>
+    </section>
+    <img src="./images/bg-section-bottom-desktop-1.svg" alt="" class="bg-section-bottom">
+
+
+    <section class="features2">
+      <img src="./images/illustration-flowing-conversation.svg" alt="">
+      <div class="features2-text">
+      <h2>Flowing Conversations</h2>
+      <p>You wouldn't paginate a conversation in real life, so why do it online? Our threads have just-in-time loading for a more natural flow.</p>
+      </div>
+    </section>
+
+    <img src="./images/bg-section-top-desktop-2.svg" alt="" class="bg-section-top">
+    <section class="users">
+      <img src="./images/illustration-your-users.svg" alt="">
+      <div class="users-text">
+      <h2>Your Users</h2>
+      <p>It takes no time at all to integrate Huddle with your app's authentication solution. This means, once signed in to your app, your users can start chatting immediately.</p>
+      </div>
+    </section>
+    <img src="./images/bg-section-bottom-desktop-2.svg" alt="" class="bg-section-bottom">
+
+
+
+    <section class="cta">
+      <h2>Ready To Build Your Community?</h2>
+      <button>Get Started For Free</button>
+    </section>
+  </main>
+
+
+
+  <footer>
+    <img src="./images/bg-footer-top-desktop.svg" alt="" class="bg-footer-top">
+    <div class="column">
+      <div class="left-column">
+        <div class="logo"></div>
+        <p class="footer-text">Lorem ipsum dolor sit amet 
+          consectetur adipisicing elit. Laudantium exercitationem, 
+          neque deserunt natus autem, voluptas nostrum ea ipsam? </p>
+        <p class="contact"><img src="./images/icon-phone.svg" alt="">Phone: +1-234-567-8910</p>
+        <p class="contact"><img src="./images/icon-email.svg" alt="">example@huddle.com</p>
+      </div>
+    
+      <div class="right-column">
+        <h3>Newsletter</h3>
+        <p>To recieve tips on how to grow your community, sign up to our
+          weekly newsletter. We'll never send or pass on email address.</p>
+        </p>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
